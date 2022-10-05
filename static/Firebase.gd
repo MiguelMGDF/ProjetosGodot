@@ -1,11 +1,11 @@
 extends Node
 
-const API_KEY := "AIzaSyCqbDnXvuXRTcKa9UrGrNCJLWqQgEJPrSo"
-const PROJECT_ID := "v1-6a376"
+const API_KEY := "null"
+const PROJECT_ID := "null"
 
-const REGISTER_URL := "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + API_KEY
-const LOGIN_URL := "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + API_KEY
-const FIRESTORE_URL := "https://firestore.googleapis.com/v1/projects/"+ PROJECT_ID +"/databases/(default)/documents/"
+const REGISTER_URL := "null" + API_KEY
+const LOGIN_URL := "null" + API_KEY
+const FIRESTORE_URL := "null"+ PROJECT_ID +"null"
 
 var user_info := {}
 
