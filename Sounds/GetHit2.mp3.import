@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GetHit2.mp3-8c0a74cc8c98ac911c8c2214b603f67e.mp3str"
+
+[deps]
+
+source_file="res://Sounds/GetHit2.mp3"
+dest_files=[ "res://.import/GetHit2.mp3-8c0a74cc8c98ac911c8c2214b603f67e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

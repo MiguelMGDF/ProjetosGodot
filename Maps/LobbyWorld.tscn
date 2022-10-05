@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Chao.png" type="Texture" id=1]
+[ext_resource path="res://Maps/LobbyWorld.gd" type="Script" id=2]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
+glow_intensity = 1.73
+glow_strength = 0.9
+glow_bloom = 0.2
+glow_blend_mode = 1
+glow_bicubic_upscale = true
+glow_high_quality = true
+adjustment_enabled = true
+
+[node name="LobbyWorld" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Chao" type="Sprite" parent="."]
+position = Vector2( 963, 544.75 )
+scale = Vector2( 2.12889, 1.20389 )
+texture = ExtResource( 1 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="Pos0" type="Position2D" parent="Spawns"]
+position = Vector2( 1622, 690 )
+
+[node name="Pos1" type="Position2D" parent="Spawns"]
+position = Vector2( 354, 299 )
+
+[node name="Pos2" type="Position2D" parent="Spawns"]
+position = Vector2( 496, 576 )
+
+[node name="Pos3" type="Position2D" parent="Spawns"]
+position = Vector2( 218, 837 )
+
+[node name="Pos4" type="Position2D" parent="Spawns"]
+position = Vector2( 666, 729 )
+
+[node name="Pos5" type="Position2D" parent="Spawns"]
+position = Vector2( 488, 902 )
+
+[node name="Pos6" type="Position2D" parent="Spawns"]
+position = Vector2( 759, 485 )
+
+[node name="Pos7" type="Position2D" parent="Spawns"]
+position = Vector2( 807, 205 )
+
+[node name="Pos8" type="Position2D" parent="Spawns"]
+position = Vector2( 1347, 847 )
+
+[node name="Pos9" type="Position2D" parent="Spawns"]
+position = Vector2( 1091, 330 )
+
+[node name="Pos10" type="Position2D" parent="Spawns"]
+position = Vector2( 972, 715 )
+
+[node name="Pos11" type="Position2D" parent="Spawns"]
+position = Vector2( 1315, 495 )
+
+[node name="Pos12" type="Position2D" parent="Spawns"]
+position = Vector2( 1463, 353 )

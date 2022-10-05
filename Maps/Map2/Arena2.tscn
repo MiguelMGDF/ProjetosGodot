@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Enviroment/Wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Chao.png" type="Texture" id=3]
+[ext_resource path="res://UI/Font2.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Maps/Map2/Arena2.gd" type="Script" id=5]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
+glow_bloom = 0.15
+glow_blend_mode = 0
+glow_bicubic_upscale = true
+adjustment_enabled = true
+adjustment_brightness = 0.75
+
+[node name="Arena2" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Chao" type="Sprite" parent="."]
+position = Vector2( 634.5, 341 )
+scale = Vector2( 2.30111, 1 )
+texture = ExtResource( 3 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 614, -3 )
+
+[node name="Wall2" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 623, 674 )
+
+[node name="Wall3" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 33, 593 )
+
+[node name="Wall5" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 104, 102 )
+rotation = 0.785398
+
+[node name="Wall6" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 1178, 621 )
+rotation = 0.785398
+
+[node name="Wall4" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 1250, 111 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 624, 341 )
+
+[node name="ArenaTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Paredes" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Paredes"]
+polygon = PoolVector2Array( -401, -109, 1668, -110, 1669, 791, -402, 790, -401, -109, -627, -65, -673, 1183, 2128, 1044, 1829, -457, -474, -396 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.356863 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -35.5
+margin_top = -160.0
+margin_right = 35.5
+margin_bottom = -102.0
+custom_fonts/font = ExtResource( 4 )
+text = "Test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -35.5
+margin_right = 35.5
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 4 )
+text = "Test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="ArenaTimer" to="." method="_on_ArenaTimer_timeout"]

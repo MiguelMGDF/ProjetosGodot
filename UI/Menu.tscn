@@ -1,0 +1,198 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://UI/Title.gd" type="Script" id=1]
+[ext_resource path="res://UI/Font1.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/Font2.tres" type="DynamicFont" id=3]
+[ext_resource path="res://UI/Menu.gd" type="Script" id=4]
+[ext_resource path="res://UI/MainMenu.tres" type="Theme" id=5]
+[ext_resource path="res://UI/NotificationError.gd" type="Script" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Popup"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("NotificationError:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("NotificationError:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("NotificationError:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("NotificationError:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -809, -191 )
+theme = ExtResource( 5 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.0862745, 0.164706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Version" type="Label" parent="."]
+anchor_left = 0.97
+anchor_top = 1.0
+anchor_right = 0.97
+anchor_bottom = 1.0
+margin_left = -478.0
+margin_top = -88.0
+custom_fonts/font = ExtResource( 3 )
+text = "Ver Alpha 0.1.2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -275.0
+margin_right = 400.0
+margin_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="RichTextLabel" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -131.0
+margin_top = -37.0
+margin_right = 124.0
+margin_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_colors/default_color = Color( 0.596078, 0.596078, 0.596078, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[shake radius=5 freq=2][rainbow freq=0.8 sat=10 val=5]411 v 1[/rainbow]
+"
+text = "411 v 1
+"
+scroll_active = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -187.5
+margin_top = -129.5
+margin_right = 187.5
+margin_bottom = 129.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Control"]
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+margin_left = -230.5
+margin_top = -129.5
+margin_right = 230.5
+margin_bottom = 129.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Offline" type="Button" parent="Menu/Control/VBoxContainer"]
+modulate = Color( 0, 0.976471, 1, 1 )
+margin_right = 461.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 3 )
+text = "Offline"
+flat = true
+
+[node name="Online" type="Button" parent="Menu/Control/VBoxContainer"]
+modulate = Color( 0, 0.976471, 1, 1 )
+margin_top = 88.0
+margin_right = 461.0
+margin_bottom = 146.0
+custom_fonts/font = ExtResource( 3 )
+text = "Online"
+flat = true
+
+[node name="Leaderboards" type="Button" parent="Menu/Control/VBoxContainer"]
+modulate = Color( 0, 0.976471, 1, 1 )
+margin_top = 176.0
+margin_right = 461.0
+margin_bottom = 234.0
+custom_fonts/font = ExtResource( 3 )
+text = "Leaderboards"
+flat = true
+
+[node name="NotificationError" type="AcceptDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -541.5
+margin_top = -193.0
+margin_right = 613.5
+margin_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 1155, 458 )
+rect_pivot_offset = Vector2( 40, 40 )
+popup_exclusive = true
+window_title = ""
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Popup = SubResource( 1 )
+anims/RESET = SubResource( 2 )

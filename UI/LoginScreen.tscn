@@ -1,0 +1,337 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://UI/Font2.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/MainMenu.tres" type="Theme" id=2]
+[ext_resource path="res://UI/LoginScreen.gd" type="Script" id=3]
+[ext_resource path="res://UI/NotificationError.gd" type="Script" id=4]
+[ext_resource path="res://UI/Font1.tres" type="DynamicFont" id=5]
+[ext_resource path="res://UI/Title.gd" type="Script" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Popup"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("NotificationError:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("NotificationError:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("NotificationError:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("NotificationError:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[node name="LoginScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.0862745, 0.164706, 1 )
+
+[node name="Version" type="Label" parent="Background"]
+anchor_left = 0.97
+anchor_top = 1.0
+anchor_right = 0.97
+anchor_bottom = 1.0
+margin_left = -478.0
+margin_top = -88.0
+custom_fonts/font = ExtResource( 1 )
+text = "Ver Alpha 0.1.2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Login" type="Control" parent="Background"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -559.5
+margin_top = -363.5
+margin_right = 559.5
+margin_bottom = 363.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Background/Login"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Background/Login/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -530.0
+margin_top = -341.0
+margin_right = 530.0
+margin_bottom = 341.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Login/Panel/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loginlbl" type="Label" parent="Background/Login/Panel/Control/VBoxContainer"]
+margin_right = 1060.0
+margin_bottom = 50.0
+text = "Login:"
+
+[node name="Logintxt" type="LineEdit" parent="Background/Login/Panel/Control/VBoxContainer"]
+margin_top = 90.0
+margin_right = 1060.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 50, 90 )
+
+[node name="Passlbl" type="Label" parent="Background/Login/Panel/Control/VBoxContainer"]
+margin_top = 230.0
+margin_right = 1060.0
+margin_bottom = 280.0
+text = "Password:"
+
+[node name="Passtxt" type="LineEdit" parent="Background/Login/Panel/Control/VBoxContainer"]
+margin_top = 320.0
+margin_right = 1060.0
+margin_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 90 )
+secret = true
+
+[node name="Login" type="Button" parent="Background/Login/Panel/Control/VBoxContainer"]
+margin_top = 460.0
+margin_right = 1060.0
+margin_bottom = 518.0
+text = "Login"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToRegister" type="Button" parent="Background/Login/Panel/Control"]
+margin_left = 666.0
+margin_top = 624.0
+margin_right = 1052.0
+margin_bottom = 682.0
+text = "Or register"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Register" type="Control" parent="Background"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -671.5
+margin_top = -441.5
+margin_right = 671.5
+margin_bottom = 441.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Background/Register"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Background/Register/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -649.5
+margin_top = -418.5
+margin_right = 649.5
+margin_bottom = 418.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Register/Panel/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Usernamelbl2" type="Label" parent="Background/Register/Panel/Control/VBoxContainer"]
+margin_right = 1299.0
+margin_bottom = 50.0
+text = "Username:"
+
+[node name="Usernametxt2" type="LineEdit" parent="Background/Register/Panel/Control/VBoxContainer"]
+margin_top = 90.0
+margin_right = 1299.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 50, 90 )
+
+[node name="Loginlbl" type="Label" parent="Background/Register/Panel/Control/VBoxContainer"]
+margin_top = 220.0
+margin_right = 1299.0
+margin_bottom = 270.0
+text = "Login:"
+
+[node name="Logintxt" type="LineEdit" parent="Background/Register/Panel/Control/VBoxContainer"]
+margin_top = 310.0
+margin_right = 1299.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 50, 90 )
+
+[node name="Passlbl" type="Label" parent="Background/Register/Panel/Control/VBoxContainer"]
+margin_top = 440.0
+margin_right = 1299.0
+margin_bottom = 490.0
+text = "Password:"
+
+[node name="Passtxt" type="LineEdit" parent="Background/Register/Panel/Control/VBoxContainer"]
+margin_top = 530.0
+margin_right = 1299.0
+margin_bottom = 620.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 90 )
+secret = true
+
+[node name="Register" type="Button" parent="Background/Register/Panel/Control/VBoxContainer"]
+margin_top = 660.0
+margin_right = 1299.0
+margin_bottom = 718.0
+text = "Register"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToLogin" type="Button" parent="Background/Register/Panel/Control"]
+margin_left = 918.5
+margin_top = 788.5
+margin_right = 1304.5
+margin_bottom = 846.5
+text = "Or Login"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinServer" type="Control" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="JoinButton" type="Button" parent="Background/JoinServer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -195.0
+margin_top = -230.0
+margin_right = 195.0
+margin_bottom = -172.0
+text = "Join Server"
+
+[node name="Title" type="RichTextLabel" parent="Background/JoinServer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -127.5
+margin_top = -140.0
+margin_right = 127.5
+margin_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_colors/default_color = Color( 0.596078, 0.596078, 0.596078, 1 )
+custom_fonts/normal_font = ExtResource( 5 )
+bbcode_enabled = true
+bbcode_text = "[shake radius=5 freq=2][rainbow freq=0.8 sat=10 val=5]411 v 1[/rainbow]
+"
+text = "411 v 1
+"
+scroll_active = false
+script = ExtResource( 6 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="NotificationError" type="AcceptDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -577.5
+margin_top = -229.0
+margin_right = 577.5
+margin_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 1155, 458 )
+rect_pivot_offset = Vector2( 40, 40 )
+popup_exclusive = true
+window_title = ""
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Popup = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[node name="FirestoreHttp" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="Background/Login/Panel/Control/VBoxContainer/Login" to="." method="_on_Login_pressed"]
+[connection signal="pressed" from="Background/Login/Panel/Control/ToRegister" to="." method="_on_ToRegister_pressed"]
+[connection signal="pressed" from="Background/Register/Panel/Control/VBoxContainer/Register" to="." method="_on_Register_pressed"]
+[connection signal="pressed" from="Background/Register/Panel/Control/ToLogin" to="." method="_on_ToLogin_pressed"]
+[connection signal="pressed" from="Background/JoinServer/JoinButton" to="." method="_on_JoinButton_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="request_completed" from="FirestoreHttp" to="." method="_on_FirestoreHttp_request_completed"]

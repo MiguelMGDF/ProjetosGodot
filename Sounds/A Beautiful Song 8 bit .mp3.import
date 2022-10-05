@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/A Beautiful Song 8 bit .mp3-4a0c7c4eaecd91e09016fe1f58eb32e2.mp3str"
+
+[deps]
+
+source_file="res://Sounds/A Beautiful Song 8 bit .mp3"
+dest_files=[ "res://.import/A Beautiful Song 8 bit .mp3-4a0c7c4eaecd91e09016fe1f58eb32e2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

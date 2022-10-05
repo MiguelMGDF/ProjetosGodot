@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Song of the Ancients 8 bit.mp3-92e8134466aa702cd3a67d02058211b0.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Song of the Ancients 8 bit.mp3"
+dest_files=[ "res://.import/Song of the Ancients 8 bit.mp3-92e8134466aa702cd3a67d02058211b0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
